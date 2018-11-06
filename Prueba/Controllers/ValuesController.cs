@@ -42,10 +42,10 @@ namespace Prueba.Controllers
         // POST api/values
         [Route("postUser")]
         [HttpPost]
-        public ActionResult Post([FromBody] User user)
+        public string Post([FromBody] User user)
         {
             var Session = HttpContext.Session.GetString("email");
-            return Ok(user);
+            return Session;
         }
         
         [Route("postRandom")]
